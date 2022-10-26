@@ -1,15 +1,15 @@
-import { HardhatUserConfig } from "hardhat/config";
-import * as dotenv from "dotenv";
-import "@nomicfoundation/hardhat-toolbox";
-import accountUtils from "./utils/accounts";
+import { HardhatUserConfig } from 'hardhat/config'
+import * as dotenv from 'dotenv'
+import '@nomicfoundation/hardhat-toolbox'
+import accountUtils from './utils/accounts'
 
-dotenv.config();
+dotenv.config()
 
 const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: "0.8.11",
+        version: '0.8.11',
         settings: {
           optimizer: {
             enabled: true,
@@ -18,7 +18,7 @@ const config: HardhatUserConfig = {
         },
       },
       {
-        version: "0.8.4",
+        version: '0.8.4',
         settings: {
           optimizer: {
             enabled: true,
@@ -36,11 +36,11 @@ const config: HardhatUserConfig = {
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
-    currency: "USD",
+    currency: 'USD',
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
   },
-};
+}
 
-export default config;
+export default config
